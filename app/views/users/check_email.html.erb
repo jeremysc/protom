@@ -1,0 +1,9 @@
+<% unless valid_email? @email %>
+  <span class="error-text">Invalid email.</span> 
+<% else %>
+  <% if @user %>
+    <span class="error-text">Email is taken.</span>
+  <% else %>
+    <%= ok_image_tag %>
+  <% end %>
+<% end %>

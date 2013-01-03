@@ -1,0 +1,41 @@
+<%= image_tag 'preview.png', :id => 'preview-image' %>
+<article class="sidebar" id="welcome">
+  <h2>
+    Learn<br/>Machine Learning
+  </h2>
+  <p>
+    ProtoM teaches you machine learning.
+    It's simple and interactive so you can get down to business:
+    software that understands speech, Twitter sentiment, stock prices and much, much more.
+  </p>
+  <div class="welcome-button">
+    <%= link_to 'Learn the basics', Tutorial.by_number.first , :class => :button %>
+  </div>
+  <div class="welcome-button">
+    <%= link_to 'Start experimenting', new_project_path, :class => :button %>
+  </div>
+  <div class="welcome-button">
+    <h3>or</h3>
+    <%= link_to 'Create account', new_user_path, :class => :button %>
+    <ul class="tips">
+      <li>
+        <span class="ui-icon ui-icon-lightbulb"></span>
+        <p>
+          Start your own projects.
+        </p>
+      </li>
+      <li>
+        <span class="ui-icon ui-icon-lightbulb"></span>
+        <p>
+          Save trials automatically and compare your results historically.
+        </p>
+      </li>
+      <li>
+        <span class="ui-icon ui-icon-lightbulb"></span>
+        <p>
+          Upload your own data sets for analysis.
+        </p>
+      </li>
+    </ul>
+  </div>
+</article>

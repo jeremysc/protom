@@ -1,0 +1,18 @@
+<h1>Listing classifiers</h1>
+
+<table>
+  <tr>
+    <th>Program name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @classifiers.each do |classifier| %>
+  <tr>
+    <td><%= classifier.program_name %></td>
+  </tr>
+<% end %>
+</table>
+
+

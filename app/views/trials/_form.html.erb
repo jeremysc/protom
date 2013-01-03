@@ -1,0 +1,72 @@
+<div id="current-trial">
+  <ul>
+    <li><a href="#current-trial-data">Data</a></li>
+    <li><a href="#current-trial-classifier">Classifier</a></li>
+    <li><a href="#current-trial-run">Training and testing</a></li>
+  </ul>
+  
+  <section id="current-trial-data">
+    <%if project.id %>
+      <%= form_tag({:controller => 'data', :action => 'create'}, 
+          :id => 'upload_data', :multipart => true, :remote => true) do %>
+        <label>-or-</label>
+        <%= file_field_tag 'data_file' %>
+        <%= submit_tag 'Upload' %>
+      <% end %>
+    <% end %>
+    
+    <%= form_for([project, trial], :remote => true) do |f| %>
+      <% if trial.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@trial.errors.count, "error") %> 
+              prohibited this trial from being saved:
+          </h2>
+          <ul>
+          <% @trial.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="field">
+        <%= select_tag :trial_datum_id, training_data_options(current_user), 
+            'data-choose-data-url' => choose_data_url,
+            'data-choose-data-method' => 'GET' %>
+        <%= image_tag 'loader.gif', :id => 'data-loader', :class => 'hidden' %>
+      </div>
+      <%= render 'data/show' %>
+  </section>
+    
+  <section id="current-trial-classifier" >
+    <div class="field">
+      <%= select_tag :trial_classifier_id, classifiers_options,
+          'data-choose-classifier-url' => choose_classifiers_url,
+          'data-choose-classifier-method' => 'GET' %>
+    </div>
+    <%= render 'classifiers/show' %>
+  </section>
+  
+  <section id="current-trial-run" >
+    <div class="sub-tabs">
+      <ul>
+        <li><a href="#current-trial-run-cv">Cross validation</a></li>
+        <li><a href="#current-trial-run-test">Use test data</a></li>
+      </ul>
+      <input hidden id="trial-mode" name="trial[mode]" value="cv"/>
+      <section id="current-trial-run-cv">
+        <p>10-fold cross validation.<p>
+      </section>
+      <section id="current-trial-run-test">
+        <div class="field">
+          <%= f.select :test_datum_id, test_data_options(current_user) %>
+        </div>
+      </section>
+    </div class="sub-tabs">
+    <div class="actions">
+      <%= button_tag 'Run', :id => 'run-button', :type => 'button' %>
+      <%= image_tag 'loader.gif', :id => 'run-loader', :class => 'hidden' %>
+    </div>
+  </section>
+  <% end %>
+</div>

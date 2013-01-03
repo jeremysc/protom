@@ -1,0 +1,92 @@
+// Application specific color schemes.
+$main-color1: #3CCACF;
+$main-color2: #9FF578;
+$main-color3: #F35E5E;
+
+// Header colors.
+$header-background-color: #295B5C;
+$header-text-color: #FFFFFF;
+$header-title-color: $header-text-color;
+$header-link-color: $header-text-color;
+
+$menu-hover-color: change-color($header-background-color, $saturation: 30%, 
+                                $lightness: 50%);
+                                
+// Jquery UI colors.
+$ui-state-active-color: change-color($main-color1, $saturation: 40%, 
+                                     $lightness: 60%);
+$ui-state-active-border-color: change-color($ui-state-active-color, 
+                                           $saturation: 30%, $lightness: 60%);
+$ui-state-default-color: change-color($main-color1, $saturation: 6%, 
+                                      $lightness: 95%);
+$ui-state-default-border-color: change-color($ui-state-default-color, 
+                                             $saturation: 3%, $lightness: 90%);
+                                    
+// Borders.
+$border-color: change-color($main-color1, $saturation: 3%, $lightness: 90%);
+$table-border: $ui-state-default-border-color;
+    
+
+// Background color
+$content-background-color: change-color($main-color1, $saturation: 1%, 
+                                        $lightness: 98%);
+$table-background: $ui-state-default-color;
+
+// Text
+$heading-main-color: #000000;
+$h1-text-color: change-color($heading-main-color, $lightness: 25%);
+$h2-text-color: change-color($heading-main-color, $lightness: 27%);
+$h3-text-color: change-color($heading-main-color, $lightness: 29%);
+$h4-text-color: change-color($heading-main-color, $lightness: 31%);
+$h5-text-color: change-color($heading-main-color, $lightness: 33%);
+$h6-text-color: change-color($heading-main-color, $lightness: 35%);
+$highlight-color: change-color($main-color1, $saturation: 100%, 
+                               $lightness: 25%);
+
+// Links
+$link-color: change-color($main-color2, $saturation: 66%, $lightness: 35%);
+$link-hover-color: change-color($main-color2, $saturation: 60%, $lightness: 30%);
+$tab-link-color: change-color($main-color2, $saturation: 60%, $lightness: 35%);
+    
+// Elements.
+$button-base-color: change-color($main-color2, $saturation: 55%, $lightness: 45%);
+$button-color: change-color($button-base-color, $lightness: 40%);
+$button-border-color: change-color($button-base-color,
+    $saturation: 100%, $lightness: 33%) !default;
+$button-font-color: white;
+$button-shadow-color: change-color($button-base-color,
+    $saturation: 66%, $lightness: 76%) !default;
+$button-hover-font-color: change-color($button-base-color,
+    $saturation: 66%, $lightness: 88%) !default;
+$button-active-shadow-color: change-color($button-base-color,
+    $saturation: 100%, $lightness: 33%) !default;
+    
+$input-base-color: #000000;
+$input-border-color: change-color($input-base-color, $lightness: 60%);
+$input-shadow-color: change-color($input-base-color, $lightness: 88%);
+$input-background-color: change-color($input-base-color, $lightness: 99%);
+$input-focus-shadow: rgba(94, 187, 189, 0.6);
+
+// Trial workbench
+$trial-nav-background-color: change-color($main-color1, $saturation: 37%, 
+                                          $lightness: 93%);
+$data-tab-active-color: change-color($ui-state-active-color, 
+                                     $saturation: 25%, $lightness: 80%);
+$data-tab-active-border-color: change-color($ui-state-active-color, 
+                                           $saturation: 20%, $lightness: 80%);
+$test-mode-active-color: change-color($ui-state-active-color, 
+                                      $saturation: 60%, $lightness: 40%);
+
+// Error colors
+$error-color: $main-color3;
+$error-status-color: $main-color3;
+
+// Confusion matrix colors;
+$result-yes-color: change-color($main-color2, $saturation: 75%, $lightness: 40%);
+
+// Data examples view
+$example-header-background-color: change-color($main-color1, $saturation: 12%, 
+                                      $lightness: 60%);
+
+// Pwnstyles variables.
+@import 'vars/color_scheme.css.scss';

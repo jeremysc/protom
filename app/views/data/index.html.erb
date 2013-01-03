@@ -1,0 +1,19 @@
+<h1>Listing data</h1>
+
+<table>
+  <tr>
+    <th>File path</th>
+    <th>Is test</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @data.each do |datum| %>
+  <tr>
+    <td><%= datum.file_path %></td>
+    <td><%= datum.is_test %></td>
+  </tr>
+<% end %>
+</table>
+
+

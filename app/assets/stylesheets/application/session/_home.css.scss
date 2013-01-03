@@ -1,0 +1,8 @@
+article.main {
+  @include box-sizing(border-box);
+  width: $index-width;
+}
+
+article.main, article.sidebar {
+  padding: $column-margin $column-margin * 2;
+}

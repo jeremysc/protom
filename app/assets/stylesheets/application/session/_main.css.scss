@@ -1,0 +1,28 @@
+@import 'new.css.scss';
+@import 'home.css.scss';
+
+$text_width: 400px;
+
+article#main article#welcome.sidebar {
+  margin: 0 $column-margin * 3;
+  @include border-radius(8px);
+  height: 635px;
+  @include box-sizing(border-box);
+  min-height: 615px;
+  
+  p {
+    font-size: 1.2em;
+    line-height: 1.2em;
+  }
+  a.button {
+    width: 190px;
+  }
+}
+
+#preview-image {
+  width: $preview-image-width;
+  margin-left: $column-margin;
+  border: 1px solid $border-color;
+  @include box-shadow(0px 0px 10px $border-color);
+  @include border-radius(8px);
+}

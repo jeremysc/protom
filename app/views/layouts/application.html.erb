@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ProtoM</title>
+<%= csrf_meta_tag %>
+<%= favicon_link_tag %>
+<%= stylesheet_link_tag 'application' %>
+<%= javascript_include_tag 'application' %>
+</head>
+<body>
+<header>
+<%= render 'layouts/header' %>
+</header>
+
+<div id="real-body">
+<div id="content-wrapper">
+<%= render 'layouts/status_bar' %>
+<article id="main">
+<%= yield %>
+</article>
+</div>
+</div>
+
+<footer>
+<%= render 'layouts/footer' %>
+</footer>
+</body>
+</html>

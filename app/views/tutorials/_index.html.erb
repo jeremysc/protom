@@ -1,0 +1,12 @@
+<h2>Tutorials</h2>
+<ol>
+  <% tutorials.each do |tutorial| %>
+    <li>
+      <h3><%= link_to "#{tutorial.number}. #{tutorial.title}", tutorial %></h3>
+      <summary>  
+        <%= tutorial.summary %>
+      </summary>
+    </li>
+  <% end %>
+</ol>
+

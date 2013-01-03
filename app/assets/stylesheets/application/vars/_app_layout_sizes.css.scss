@@ -1,0 +1,40 @@
+$page-columns: 32;
+$sidebar-columns: 12;
+
+// Import layout vars from pwnstyles.
+@import 'vars/layout_sizes.css.scss';
+
+// Generic
+$radius: 4px;
+$label-right-padding: 11px;
+$content-wrapper-top-padding: 20px;
+$sidebar-width: $column-total * $sidebar-columns - $column-margin * 3;
+$article-min-height: 650px;
+$horizontal-margin: $column-margin;
+
+// Signup form
+$signup-form-width: $column-total * 14 - $column-margin;
+$signup-value-width: $signup-form-width * 0.4;
+$signup-comment-width: $signup-form-width * 0.25;
+$signup-label-width: $signup-form-width * 0.35;
+
+// Project trial
+$run-button-size: 70px;
+$project-nav-width: $column-total * 4 - $column-margin;
+$tab-margin: 5px;
+
+// Data view
+$chart-width: 600px;
+
+// Tutorial
+$tutorial-width: $column-total * 10 - $column-margin;
+$tutorial-section-height: 550px;
+
+// Status bar
+$status-bar-width: $page-width / 2;
+
+// Project and tutorial indices
+$index-width: $column-total * 20 - $column-margin;
+
+// Welcome page.
+$preview-image-width: $column-total * 19 - $column-margin;

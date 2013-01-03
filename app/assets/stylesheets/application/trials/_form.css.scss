@@ -1,0 +1,248 @@
+#current-project {
+  position: static;
+  border: none;
+  background: none;
+  @include box-flex(1);
+  @include box;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+
+    > li {
+      @include border-radius($radius);
+      clear: both;
+      border: none;
+      width: $project-nav-width - $column-margin;
+      margin: $tab-margin $tab-margin;
+
+      &.ui-state-default {
+        background:  $trial-nav-background-color;
+      }
+
+      &.ui-state-active {
+        background:  $ui-state-active-color;
+      }
+
+      a {
+        float: right;
+      }
+    }
+
+    > h4 {
+      text-align: right;
+      font-size: inherit;
+      padding: 0.5em 1em;
+      margin-top: 40px;
+    }
+
+  }
+
+  // Too much detail?  Maybe.
+  #data-tabs-features ul {
+    li {
+      border-top: 1px solid $border-color;
+      padding-top: .5em;
+
+      input {
+        vertical-align: top;
+      }
+
+      label {
+        vertical-align: top;
+        text-size: 18pt;
+      }
+      
+    }
+  }
+  
+  div.chart {
+    margin: auto;
+    width: $chart-width;
+    display: block;
+  }
+
+  > ul {
+    background: $trial-nav-background-color;
+    width: $project-nav-width;
+    margin-right: $column-margin;
+    border: 0;
+  }
+
+  > .ui-tabs-panel {
+    padding: $tab-margin 0;
+    margin-right: $column-margin;
+    @include box-flex(1);
+
+    > section.ui-tabs-panel {
+      margin: 0;
+    }
+    
+    section {
+      margin: {
+        bottom: 1.2em;
+        top: 1em;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  tr:nth-child(even) {
+    background: $table-background;
+  }
+
+  tr {
+    border: {
+      top: 1px solid $table-border;
+      bottom: 1px solid $table-border;
+    }
+  }
+
+  h5 {
+    background: $table-background;
+    margin: 0;
+    border: {
+      bottom: 2px solid $table-border;
+      top: 1px solid $table-border;
+    }
+    padding: 0.2em 0.2em;
+  }
+  
+  select > option:first-child {
+    color: grey;
+  }
+  
+  #current-trial-run-cv, #current-trial-run-test {
+    height: 35px;
+    border: 1px solid $border-color;
+    margin: 0 0 $column-margin 0;
+  }
+  
+  .sub-tabs {
+    
+    a {
+      font-size: $main-font-size;
+    }
+    
+    .ui-state-default a {
+      color: $tab-link-color;  
+    }
+    
+    .ui-state-active a {
+      color: $h1-text-color;
+    }
+    
+    .ui-state-active {
+      background: white;
+      border-color: $data-tab-active-border-color;
+    }
+  }
+  
+  .classified-examples {
+    thead tr {
+      background: $example-header-background-color;
+      
+      th {
+        color: white;
+      }
+    }
+  }
+}
+
+.ui-tabs-nav.ui-widget-header {
+  @include border-radius(0);
+  border-bottom: 1px solid $ui-state-default-border-color;
+}
+
+
+#data-tabs {
+  #examples-list {
+    margin-top: $horizontal-margin;
+  
+    li {
+      margin: $horizontal-margin 0;
+      font-size: 11pt;
+      
+      table {
+        tr:first-child {
+          background: $example-header-background-color;
+          
+          th {
+            color: white; 
+          }
+        }
+        
+        th {
+          width: 33%;
+          text-align: right;
+          padding-right: 2em;
+        }
+        
+         td {
+          width: 67%;
+        }
+        
+        tr:nth-child(2) {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+  #data-tabs-features {
+    label {
+      font-weight: bold;
+    }
+    div.field {
+      margin-bottom: 0.2em;
+      margin-top: 0.2em;
+    }
+    li {
+      border: 1px solid $border-color;
+      margin-bottom: 0.7em;
+      @include border-radius($radius);
+    }
+  }
+}
+
+#data-tabs-features, .trial-result {
+  p {
+    margin: 0.2em 0 0.4em 0;
+  }
+}
+
+#upload_data {
+  float: right;
+}
+
+#data_file {
+  width: 300px;
+}
+
+#current-trial-run {
+  ul {
+    border: none;
+    
+    li {
+      margin: 0;
+      @include border-radius(0);
+      
+      &:first-child {
+        @include border-top-left-radius($radius);
+      }
+      
+      &:last-child {
+        @include border-top-right-radius($radius);
+      }
+      
+      &.ui-state-active {
+        background: $test-mode-active-color;
+      }
+    }
+  }
+}
+
+

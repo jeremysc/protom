@@ -1,0 +1,91 @@
+.main {
+  
+  summary {
+    padding: 0 2em;
+    line-height: 1.2em;
+  }
+  
+  li {
+    padding: 1em 0;
+  }
+  
+  
+}
+
+.tips p {
+  font-family: $heading-font;
+  font-size: 1.2em;
+  line-height: 1.2em;
+}
+
+.sidebar {
+  li {
+    padding: 0.5em 0;
+  }
+  
+  .button:first-child {
+    margin: 1em 0;  
+  }
+  
+  summary {
+    padding: 0 1.5em;
+  }
+}
+
+.tutorials-index {
+  li {
+    border-bottom: 1px solid $border-color;
+  }
+  
+  li:last-child {
+    border: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+    
+}
+
+.projects-index {
+  li {
+    padding: 0.5em;
+    @include border-radius($radius);
+    width: 23em;
+    
+    h3, h3 > a {
+      display: inline-block;
+      width: 10em;
+    }
+    div.actions {
+      display: inline-block;
+      margin-left: 3em;
+    } 
+  }
+    
+  li:nth-child(odd) {
+    background: $table-background;
+  }    
+  
+  h3 {
+    font-size: $h4-font-size;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.sidebar, .main {
+  .ui-icon-lightbulb + p {
+    margin: 0 18px;
+  }
+  
+  ol, ul {
+    margin-top: 1em;
+  }
+  
+  > h2 + button {
+    margin: 1em 0;
+  }
+}

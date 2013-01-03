@@ -1,0 +1,122 @@
+<article>
+  <h1>Tweet Sentiment</h1>
+  <summary>
+    A real-world example that teaches you how natural language understanding works,
+    and lets you test your classifier on live tweets!
+  </summary>
+  <section>
+    <h2>
+      Live Twitter Sentiment
+    </h2>
+    <p>
+      In this tutorial, we are going to train a classifier to understand whether a tweet
+      is positively or negatively charged, based on its content. 
+    </p>
+    <p>
+      Let's get right into it. In the <em>Data</em> tab, choose the <em>tweet-sentiment</em>
+      dataset as our training data. These aren't live tweets, but we're getting there.
+      Next, select the <em>bayes.NaiveBayesMultinomial</em> classifier in the <em>Classifier</em> tab.
+    </p>
+    <p>
+      Now click the <em>Training and Testing</em> tab. Instead of using cross-validation,
+      let's click the <em>Use test data</em> tab. Using test data is different from
+      cross-validation, because it involves using the entire training dataset (<em>tweet-sentiment</em>)
+      as training and a separate, <em>unseen</em> dataset for testing.
+    </p>
+  </section>
+  <section>
+    <h2>
+      Choose a topic!
+    </h2>
+    <p>
+      Let's test the classifier on some live tweets now! Enter a topic in the search box below
+      and we will go grab a bunch of related tweets for you. The tweets will be saved
+      as a new dataset in the <em>Use test data</em> menu.
+    </p>
+    <p>
+      <form id="tweet_search" data-remote="true">
+        <input data_tweet_search_method="GET" 
+               data_tweet_search_url="/data/tweet" id="tweet_search_term" 
+               name="tweet_search_term" type='text' />
+        <button id="tweet_search_button" name="button" type="button">Search</button>
+      </form>
+    </p>
+    <p>
+      When you have gathered tweets, select the <em>twitter-&lt;YOUR-SEARCH&gt;</em> dataset from the <em>Use test
+      data</em> menu. Hit <em>RUN</em>. The tweets and their predicted labels are shown now. How well did we do?
+      Feel free to keep experimenting with different Twitter topics!
+    </p>
+  </section>
+  <section>
+    <h2>
+      Understanding Language
+    </h2>
+    <p>
+      Let's try to understand how sentiment classification works.
+    </p>
+    <p>
+      Natural Language Processing, or NLP, is all about training software to understand
+      naturally occurring text. Its strategies can be used to answer questions spoken
+      to your phone, filter spam from your inbox, translate from one language to another
+      and, in this case, summarize the public's feelings about a topic based on sentiment
+      on Twitter.
+    </p>
+  </section>
+  <section>
+    <h2>
+      The Training Dataset
+    </h2>
+    <p>
+      Let's go back and look at the <em>tweet-sentiment</em> dataset. This consists of roughly 700 
+      actual tweets on a variety of subjects from Twitter, half of them negative and half
+      of them positive. Take a moment to look through some of them and please excuse any
+      profanity.
+    </p>
+    <p>
+      Positive or negative sentiment can mainly be described by the occurrence of positive or
+      negative words in the tweet. For example, a tweet with the word 'amazing' is probably
+      positive and a tweet with the word 'terrible' is probably negative. We can check if
+      a word occurs in a tweet using <em>unigrams</em>. 
+    </p>
+  </section>
+  <section>
+    <h2>
+      Processing Tweets: The Unigram
+    </h2>
+    <p>
+      A <em>unigram</em> is a feature that indicates whether or not a particular word occurs
+      in that example. For example, the 'amazing' unigram will tell us whether or not the word
+      'amazing' occurs in each tweet. Unigrams are collected for most words in the training set,
+      meaning we have <em>a lot</em> of features - more than 1000!
+    </p>
+    <p>
+      More advanced NLP involves calculating N-grams. N-grams are unigrams extended to capture more
+      context around a particular word. For example, a bigram would indicate whether or not a 
+      <em>pair</em> of words occurs in a tweet. We stick to unigrams in our example, for simplicity.
+    </p>
+    <p>
+      We have setup ProtoM to calculate unigrams for you already. If there is a <em>string</em>
+      field in your data, we convert it to unigrams automatically when you train the classifier.
+    </p>
+  </section>
+  <section>
+    <h2>
+      Classifiers for Tweet Sentiment
+    </h2>
+    <p>
+      Different kinds of classifiers will work well for different kinds of tweets, but your best
+      bet is to choose either <em>Naive Bayes Multinomial</em> or <em>LibSVM</em>, which is a support
+      vector machine.
+    </p>
+  </section>
+  <section>
+    <h2>
+      More Twittering?
+    </h2>
+    <p>
+      That's the end of the tutorial. Feel free to experiment with more Twitter topics by 
+      returning to the beginning of the tutorial, as well as different classifiers.
+      Once you're done, we'd recommend creating an account if you haven't already and uploading your own data!
+    </p>
+  </section>
+</article>

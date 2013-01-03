@@ -1,0 +1,65 @@
+#current-project > .ui-tabs-panel {
+  table.summary.result {
+    td:first-child {
+      width: 20%;
+    }
+    
+    .highlight {
+      color: $highlight-color;
+    }
+  }
+  
+  .trial-message {
+    @include border-radius($radius);
+    padding: 0 1em;
+  }
+}
+
+#current-project #confusion-matrix {
+  border-bottom: 1px solid $table-border;
+  overflow: auto;
+  
+  table {
+    border-spacing: 0.2em;
+    border-collapse: separate;
+    width: auto;
+    overflow: auto;
+    
+    td:first-child {
+      text-align: right;
+    }
+    
+    td {
+      text-align: center;
+      vertical-align: middle;
+      min-width: 26px;
+      min-height: 26px;
+    }
+    
+    .result {
+      cursor: pointer;
+      
+      &.yes {
+        background: $result-yes-color;
+        color: white;
+        font-weight: bold;
+      }
+    
+      &.no {
+        background: $main-color3;
+        color: white;
+        font-weight: bold;
+      }
+    
+      &.none {
+        background: $table-background;
+      }
+    }
+  }
+}
+
+#current-project {
+  .classified-examples {
+    overflow: auto;
+  }
+}

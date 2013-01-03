@@ -1,0 +1,62 @@
+<% if current_user %>
+  <h2>Projects</h2>
+  <%= button_tag 'New project', :id => 'new-project-button' %> 
+  <%= render "projects/form", :project => Project.new %>
+  <% projects = current_user.projects %>
+  <% if projects.any? %>
+    <ul class='projects-index'>
+      <% projects.each do |project| %>
+        <li>  
+          <h3><%= link_to "#{project.name}", edit_project_path(project) %></h3>
+          <div class="actions">
+            <%= link_to close_tag, project, confirm: 'Are you sure?', method: :delete %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <ul>
+      <li>
+        <span class="ui-icon ui-icon-lightbulb"></span>
+        <p>
+          Trials in a project are saved so that
+          you can come back later to compare your results.
+        </p>
+      </li>
+      <li>
+        <span class="ui-icon ui-icon-lightbulb"></span>
+        <p>
+          You can upload your own data sets for analysis.
+        </p>
+      </li>
+      <li>
+        <span class="ui-icon ui-icon-lightbulb"></span>
+        <p>
+          You can access your data and trial results wherever you go.
+        </p>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <%= link_to 'Create account', new_user_path, :class => :button %>
+  <ul class="tips">
+    <li>
+      <span class="ui-icon ui-icon-lightbulb"></span>
+      <p>
+        Start your own projects.
+      </p>
+    </li>
+    <li>
+      <span class="ui-icon ui-icon-lightbulb"></span>
+      <p>
+        Save trials automatically and compare your results historically.
+      </p>
+    </li>
+    <li>
+      <span class="ui-icon ui-icon-lightbulb"></span>
+      <p>
+        Upload your own data sets for analysis.
+      </p>
+    </li>
+  </ul>
+<% end %>
